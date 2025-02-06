@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheumatology Discussion (2)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .quiz-container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .timer {
+            color: red;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            display: none;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct {
+            color: green;
+        }
+        .question-result {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Rheumatology Discussion (2)</h1>
+        <div class="timer" id="timer">Time remaining: 60 seconds</div>
+
+        <div class="question" id="question-1">
+            <p> Which one of the following conditions has polygenic inheritance? </p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="Bartter's syndrome"> Bartter's syndrome </label>
+                <label><input type="radio" name="q1" value="Huntington disease"> Huntington disease </label>
+                <label><input type="radio" name="q1" value="Ankylosing spondylitis"> Ankylosing spondylitis </label>
+                <label><input type="radio" name="q1" value="Fragile X syndrome"> Fragile X syndrome </label>
+                <label><input type="radio" name="q1" value="Von Willebrand's disease"> Von Willebrand's disease </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-2">
+            <p> A 25-year-old man presents with back pain. Which one of the following may suggest a diagnosis of ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="Rapid onset"> Rapid onset </label>
+                <label><input type="radio" name="q2" value="Gets worse following exercise"> Gets worse following exercise </label>
+                <label><input type="radio" name="q2" value="Bone tenderness"> Bone tenderness </label>
+                <label><input type="radio" name="q2" value="Pain at night"> Pain at night </label>
+                <label><input type="radio" name="q2" value="Improves with rest"> Improves with rest </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-3">
+            <p> A 24-year-old man is investigated for chronic back pain. Which one of the following would most suggest a diagnosis of ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="Reduced lateral flexion of the lumbar spine"> Reduced lateral flexion of the lumbar spine </label>
+                <label><input type="radio" name="q3" value="Pain gets worse during the day"> Pain gets worse during the day </label>
+                <label><input type="radio" name="q3" value="Pain on straight leg raising"> Pain on straight leg raising </label>
+                <label><input type="radio" name="q3" value="Loss of thoracic kyphosis"> Loss of thoracic kyphosis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-4">
+            <p> Which of the following is least likely to be associated with ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="Apical fibrosis"> Apical fibrosis </label>
+                <label><input type="radio" name="q4" value="Achilles tendonitis"> Achilles tendonitis </label>
+                <label><input type="radio" name="q4" value="Amyloidosis"> Amyloidosis </label>
+                <label><input type="radio" name="q4" value="Achalasia"> Achalasia </label>
+                <label><input type="radio" name="q4" value="Heart block"> Heart block </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-5">
+            <p> A 28-year-old man is investigated for recurrent lower back pain. A diagnosis of ankylosing spondylitis is suspected. Which one of the following investigations is most useful for diagnosis and monitoring? </p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="ESR"> ESR </label>
+                <label><input type="radio" name="q5" value="X-ray of the sacro-iliac joints"> X-ray of the sacro-iliac joints </label>
+                <label><input type="radio" name="q5" value="HLA-B27 testing"> HLA-B27 testing </label>
+                <label><input type="radio" name="q5" value="X-ray of the thoracic spine"> X-ray of the thoracic spine </label>
+                <label><input type="radio" name="q5" value="CT of the lumbar spine"> CT of the lumbar spine </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-6">
+            <p> Histocompatibility antigen HLA-B27 is present in what percentage of North American patients with ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="10%"> 10% </label>
+                <label><input type="radio" name="q6" value="30%"> 30% </label>
+                <label><input type="radio" name="q6" value="50%"> 50% </label>
+                <label><input type="radio" name="q6" value="90%"> 90% </label>
+                <label><input type="radio" name="q6" value="100%"> 100% </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-7">
+            <p> Which of the following is the most common extra-articular manifestation of ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="Anterior uveitis"> Anterior uveitis </label>
+                <label><input type="radio" name="q7" value="Aortic insufficiency"> Aortic insufficiency </label>
+                <label><input type="radio" name="q7" value="Inflammatory bowel disease"> Inflammatory bowel disease </label>
+                <label><input type="radio" name="q7" value="Pulmonary fibrosis"> Pulmonary fibrosis </label>
+                <label><input type="radio" name="q7" value="Third-degree heart block"> Third-degree heart block </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-8">
+            <p> Which cardiac valvular lesion is most common in patients with ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="Aortic regurgitation"> Aortic regurgitation </label>
+                <label><input type="radio" name="q8" value="Mitral regurgitation"> Mitral regurgitation </label>
+                <label><input type="radio" name="q8" value="Mitral stenosis"> Mitral stenosis </label>
+                <label><input type="radio" name="q8" value="Pulmonic stenosis"> Pulmonic stenosis </label>
+                <label><input type="radio" name="q8" value="Tricuspid regurgitation"> Tricuspid regurgitation </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-9">
+            <p> Which one of the following is most recognised as a potential complication in a patient with ankylosing spondylitis? </p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="Heart block"> Heart block </label>
+                <label><input type="radio" name="q9" value="Aortic stenosis"> Aortic stenosis </label>
+                <label><input type="radio" name="q9" value="Achalasia"> Achalasia </label>
+                <label><input type="radio" name="q9" value="Diabetes mellitus"> Diabetes mellitus </label>
+                <label><input type="radio" name="q9" value="Bronchiectasis"> Bronchiectasis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-10">
+            <p> Which one of the following statements regarding ankylosing spondylitis is correct? </p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="HLA-B27 is positive in 50% of patients"> HLA-B27 is positive in 50% of patients </label>
+                <label><input type="radio" name="q10" value="Achilles tendonitis is a recognised association"> Achilles tendonitis is a recognised association </label>
+                <label><input type="radio" name="q10" value="It affects men twice as commonly as women"> It affects men twice as commonly as women </label>
+                <label><input type="radio" name="q10" value="The typical age of presentation is between 40-50 years"> The typical age of presentation is between 40-50 years </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-11">
+            <p> A 33-year-old man who is suspected of having ankylosing spondylitis has a lumbar spine x-ray. Which one of the following features is most likely to be present? </p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="Wedge shaped discs"> Wedge shaped discs </label>
+                <label><input type="radio" name="q11" value="Sclerosis"> Sclerosis </label>
+                <label><input type="radio" name="q11" value="'Rugger-Jersey' spine"> 'Rugger-Jersey' spine </label>
+                <label><input type="radio" name="q11" value="Osteophytes"> Osteophytes </label>
+                <label><input type="radio" name="q11" value="Subchondral cysts"> Subchondral cysts </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-12">
+            <p> Mr. Charleston is a 25-year-old man seeing his primary care physician for evaluation of low back pain. The pain is severe, worse in the morning, improved with exercise, and worse with rest; in particular, nighttime sleeping is difficult. He does feel quite stiff in the morning for at least 30 minutes. An MRI of his lower back is obtained and shows active inflammation in the sacroiliac joint. On further questioning, he reports a history of unilateral eye redness treated with corticosteroids about 2 years ago. A test for HLA-B27 is positive. Which of the following is first-line therapy for his condition? </p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="Infliximab"> Infliximab </label>
+                <label><input type="radio" name="q12" value="Naproxen"> Naproxen </label>
+                <label><input type="radio" name="q12" value="Prednisone"> Prednisone </label>
+                <label><input type="radio" name="q12" value="Rituximab"> Rituximab </label>
+                <label><input type="radio" name="q12" value="Tramadol"> Tramadol </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-13">
+            <p> A 28-year-old man is diagnosed with having ankylosing spondylitis. He presented with a six month history of back pain. On examination there is reduced lateral flexion of the spine but no evidence of any other complications. Which one of the following is he most likely to be offered as first-line treatment? </p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="Exercise regime + NSAIDs"> Exercise regime + NSAIDs </label>
+                <label><input type="radio" name="q13" value="Exercise regime + infliximab"> Exercise regime + infliximab </label>
+                <label><input type="radio" name="q13" value="Physiotherapy + sulfasalazine"> Physiotherapy + sulfasalazine </label>
+                <label><input type="radio" name="q13" value="Physiotherapy + etanercept"> Physiotherapy + etanercept </label>
+                <label><input type="radio" name="q13" value="Exercise regime + paracetamol"> Exercise regime + paracetamol </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-14">
+            <p> Which one of the following conditions is least associated with HLA-B27? </p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="Reiter's syndrome"> Reiter's syndrome </label>
+                <label><input type="radio" name="q14" value="Psoriatic arthritis"> Psoriatic arthritis </label>
+                <label><input type="radio" name="q14" value="Ankylosing spondylitis"> Ankylosing spondylitis </label>
+                <label><input type="radio" name="q14" value="Crohn's disease"> Crohn's disease </label>
+                <label><input type="radio" name="q14" value="Sacroiliitis"> Sacroiliitis </label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-15">
+            <p> A 45-year-old man presents with a painful, swollen and red left middle toe. There is no history of trauma and his symptoms have been present for around a week. Which one of the following conditions is most associated with this presentation? </p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="Diabetes mellitus"> Diabetes mellitus </label>
+                <label><input type="radio" name="q15" value="Systemic sclerosis"> Systemic sclerosis </label>
+                <label><input type="radio" name="q15" value="Rheumatoid arthritis"> Rheumatoid arthritis </label>
+                <label><input type="radio" name="q15" value="Bisphosphonate use"> Bisphosphonate use </label>
+                <label><input type="radio" name="q15" value="Psoriatic arthritis"> Psoriatic arthritis </label>
+            </div>
+        </div>
+
+        <div class="question" id="question-16">
+            <p>Approximately what percentage of patients with psoriasis develop associated arthropathy?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="0.5%"> 0.5%</label>
+                <label><input type="radio" name="q16" value="12-15%"> 12-15%</label>
+                <label><input type="radio" name="q16" value="4-5%"> 4-5%</label>
+                <label><input type="radio" name="q16" value="1%"> 1%</label>
+                <label><input type="radio" name="q16" value="10%"> 10%</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-17">
+            <p>All of the following help distinguish psoriatic arthritis from other joint disorders EXCEPT:</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="Dactylitis"> Dactylitis</label>
+                <label><input type="radio" name="q17" value="Enthesitis"> Enthesitis</label>
+                <label><input type="radio" name="q17" value="Nail pitting"> Nail pitting</label>
+                <label><input type="radio" name="q17" value="Presence of diarrhoea"> Presence of diarrhoea</label>
+                <label><input type="radio" name="q17" value="Shortening of digits"> Shortening of digits</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-18">
+            <p>Which of the following definitions best fits the term enthesitis?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A palpable vibratory or crackling sensation elicited with joint motion"> A palpable vibratory or crackling sensation elicited with joint motion</label>
+                <label><input type="radio" name="q18" value="Alteration of joint alignment so that articulating surfaces incompletely approximate each other"> Alteration of joint alignment so that articulating surfaces incompletely approximate each other</label>
+                <label><input type="radio" name="q18" value="Inflammation at the site of tendinous or ligamentous insertion into bone"> Inflammation at the site of tendinous or ligamentous insertion into bone</label>
+                <label><input type="radio" name="q18" value="Inflammation of the periarticular membrane lining the joint capsule"> Inflammation of the periarticular membrane lining the joint capsule</label>
+                <label><input type="radio" name="q18" value="Inflammation of a saclike cavity near a joint that decreases friction"> Inflammation of a saclike cavity near a joint that decreases friction</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-19">
+            <p>Which of the following statements is true regarding psoriatic arthropathy?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="Approximately one-third of patients with psoriasis eventually develop arthropathy"> Approximately one-third of patients with psoriasis eventually develop arthropathy</label>
+                <label><input type="radio" name="q19" value="The mainstay of management is analgesia, physiotherapy and joint replacement"> The mainstay of management is analgesia, physiotherapy and joint replacement</label>
+                <label><input type="radio" name="q19" value="Males and females are equally affected"> Males and females are equally affected</label>
+                <label><input type="radio" name="q19" value="Arthritis mutilans is the most common subtype"> Arthritis mutilans is the most common subtype</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-20">
+            <p>25 years old woman presents with complaint of painful mouth ulcerations. Examination of oral mucosa reveals two shallow ulcers with yellow base on buccal mucosa, ophthalmologic examination is consistent with anterior uveitis. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="Behcet syndrome"> Behcet syndrome</label>
+                <label><input type="radio" name="q20" value="Bullous pemphigoid"> Bullous pemphigoid</label>
+                <label><input type="radio" name="q20" value="Sjogren syndrome"> Sjogren syndrome</label>
+                <label><input type="radio" name="q20" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-21">
+            <p>A 27-year-old woman presents with painful genital ulceration. She has had recurrent attacks for the past four years. Oral acyclovir has had little effect on the duration of her symptoms. She has also noticed for the past year almost weekly attacks of mouth ulcers which again are slow to heal. Her only past medical history of note is being treated for thrombophlebitis two years ago. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="Behcet's syndrome"> Behcet's syndrome</label>
+                <label><input type="radio" name="q21" value="Polyarteritis nodosa"> Polyarteritis nodosa</label>
+                <label><input type="radio" name="q21" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+                <label><input type="radio" name="q21" value="Sarcoidosis"> Sarcoidosis</label>
+                <label><input type="radio" name="q21" value="Herpes simplex virus type 2"> Herpes simplex virus type 2</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-22">
+            <p>Which of the following is required for the diagnosis of Behçet disease?</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="Large-vessel vasculitis"> Large-vessel vasculitis</label>
+                <label><input type="radio" name="q22" value="Pathergy test"> Pathergy test</label>
+                <label><input type="radio" name="q22" value="Recurrent oral ulceration"> Recurrent oral ulceration</label>
+                <label><input type="radio" name="q22" value="Recurrent genital ulceration"> Recurrent genital ulceration</label>
+                <label><input type="radio" name="q22" value="Uveitis"> Uveitis</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-23">
+            <p>Which one of the following is least associated with Behcet's syndrome?</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="Mouth ulcers"> Mouth ulcers</label>
+                <label><input type="radio" name="q23" value="Genital ulcers"> Genital ulcers</label>
+                <label><input type="radio" name="q23" value="Conjunctivitis"> Conjunctivitis</label>
+                <label><input type="radio" name="q23" value="Deep vein thrombosis"> Deep vein thrombosis</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-24">
+            <p>All of the following are known complications of Behçet syndrome EXCEPT:</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="Arterial thrombosis"> Arterial thrombosis</label>
+                <label><input type="radio" name="q24" value="Central nervous system involvement"> Central nervous system involvement</label>
+                <label><input type="radio" name="q24" value="Deep vein thrombosis"> Deep vein thrombosis</label>
+                <label><input type="radio" name="q24" value="Pulmonary artery vasculitis"> Pulmonary artery vasculitis</label>
+                <label><input type="radio" name="q24" value="All of the above are known complications of Behçet’s syndrome"> All of the above are known complications of Behçet’s syndrome</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-25">
+            <p>Reactive arthritis is associated with which one of the following HLA antigens?</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="HLA-B27"> HLA-B27</label>
+                <label><input type="radio" name="q25" value="HLA-A3"> HLA-A3</label>
+                <label><input type="radio" name="q25" value="HLA-DR4"> HLA-DR4</label>
+                <label><input type="radio" name="q25" value="HLA-B5"> HLA-B5</label>
+                <label><input type="radio" name="q25" value="HLA-DR3"> HLA-DR3</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-26">
+            <p>A 25-year-old woman presents with a three day history of dysuria and a painful left knee. During the review of symptoms she mentions a bout of diarrhoea and crampy abdominal pain three weeks ago. She is normally fit and well and takes no regular medication. Her father died of colorectal cancer in his sixth decade. On examination the left knee is red, swollen and hot to touch. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="Reactive arthritis secondary to Salmonella spp."> Reactive arthritis secondary to Salmonella spp.</label>
+                <label><input type="radio" name="q26" value="Reactive arthritis secondary to Chlamydia trachomatis"> Reactive arthritis secondary to Chlamydia trachomatis</label>
+                <label><input type="radio" name="q26" value="Rheumatoid arthritis"> Rheumatoid arthritis</label>
+                <label><input type="radio" name="q26" value="Ulcerative colitis"> Ulcerative colitis</label>
+                <label><input type="radio" name="q26" value="Gonococcal arthritis"> Gonococcal arthritis</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-27">
+            <p>A 25-year-old man presents with a painful, swollen left knee. He returned 4 weeks ago from a holiday in Spain, There is no history of trauma and he has had no knee problems previously. On examination he has a swollen warm left knee with a full range of movement. His ankle joints are also painful to move but there is no swelling. On the soles of both feet you notice a waxy yellow rash. What is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="Rheumatoid arthritis"> Rheumatoid arthritis</label>
+                <label><input type="radio" name="q27" value="Psoriatic arthritis"> Psoriatic arthritis</label>
+                <label><input type="radio" name="q27" value="Gout"> Gout</label>
+                <label><input type="radio" name="q27" value="Reactive arthritis"> Reactive arthritis</label>
+                <label><input type="radio" name="q27" value="Gonococcal arthritis"> Gonococcal arthritis</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-28">
+            <p>Mr. Husten is a 27-year-old man seen at his primary care physician’s office for evaluation of painful arthritis involving the right knee associated with diffuse bilateral finger swelling. He is otherwise healthy but does recall a severe bout of diarrheal illness about 3–4 weeks prior that spontaneously resolved. He works as a recreation supervisor at a daycare centre and said many of the children had a similar diarrheal illness. He takes no medications and reports rare marijuana use. On review of systems, he reports painful urination. Examination shows inflammatory arthritis of the right knee, dactylitis, and normal genitourinary examination. He is diagnosed with reactive arthritis. Which of the following was the most likely etiologic agent of his diarrhoea?</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="Campylobacter jejuni"> Campylobacter jejuni</label>
+                <label><input type="radio" name="q28" value="Clostridium difficile"> Clostridium difficile</label>
+                <label><input type="radio" name="q28" value="Escherichia coli"> Escherichia coli</label>
+                <label><input type="radio" name="q28" value="Helicobacter pylori"> Helicobacter pylori</label>
+                <label><input type="radio" name="q28" value="Shigella flexneri"> Shigella flexneri</label>
+            </div>
+        </div>
+    
+        <div class="question" id="question-29">
+            <p>Each one of the following is seen in reactive arthritis except:</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="Urethritis"> Urethritis</label>
+                <label><input type="radio" name="q29" value="Keratoderma Blennorrhagica"> Keratoderma Blennorrhagica</label>
+                <label><input type="radio" name="q29" value="Conjunctivitis"> Conjunctivitis</label>
+                <label><input type="radio" name="q29" value="Aseptic meningoencephalitis"> Aseptic meningoencephalitis</label>
+                <label><input type="radio" name="q29" value="Circinate balanitis"> Circinate balanitis</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-30">
+            <p>Which cell in the bone microenvironment is primarily responsible for coordinating the regulation of bone remodelling?</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="Bone lining cells"> Bone lining cells</label>
+                <label><input type="radio" name="q30" value="Bone marrow stromal cells"> Bone marrow stromal cells</label>
+                <label><input type="radio" name="q30" value="Osteoblasts"> Osteoblasts</label>
+                <label><input type="radio" name="q30" value="Osteoclasts"> Osteoclasts</label>
+                <label><input type="radio" name="q30" value="Osteocytes"> Osteocytes</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-31">
+            <p>Osteoporosis is due to a defect in:</p>
+            <div class="options">
+                <label><input type="radio" name="q31" value="Osteoclast function"> Osteoclast function</label>
+                <label><input type="radio" name="q31" value="PTH receptors"> PTH receptors</label>
+                <label><input type="radio" name="q31" value="Osteoblast function"> Osteoblast function</label>
+                <label><input type="radio" name="q31" value="Calcium resorption in proximal tubule"> Calcium resorption in proximal tubule</label>
+                <label><input type="radio" name="q31" value="Calcium absorption"> Calcium absorption</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-32">
+            <p>A 54-year-old woman who has had two Colle's fractures in the past three years has a DEXA scan:
+            <br>T-score
+            <br>L2-4 vertebrae -1.4
+            <br>Femoral neck -2.7
+            <br>What does the scan show?</p>
+            <div class="options">
+                <label><input type="radio" name="q32" value="Osteoporosis in both the vertebrae and femoral neck"> Osteoporosis in both the vertebrae and femoral neck</label>
+                <label><input type="radio" name="q32" value="Osteoporosis in vertebrae, osteopenia in femoral neck"> Osteoporosis in vertebrae, osteopenia in femoral neck</label>
+                <label><input type="radio" name="q32" value="Osteopenia in both the vertebrae and femoral neck"> Osteopenia in both the vertebrae and femoral neck</label>
+                <label><input type="radio" name="q32" value="Osteopenia in vertebrae, osteoporosis in femoral neck"> Osteopenia in vertebrae, osteoporosis in femoral neck</label>
+                <label><input type="radio" name="q32" value="Normal bone density in vertebrae, osteoporosis in femoral neck"> Normal bone density in vertebrae, osteoporosis in femoral neck</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-33">
+            <p>Which one of the following is not risk factor for developing osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q33" value="Smoking"> Smoking</label>
+                <label><input type="radio" name="q33" value="Obesity"> Obesity</label>
+                <label><input type="radio" name="q33" value="Sedentary lifestyle"> Sedentary lifestyle</label>
+                <label><input type="radio" name="q33" value="Premature menopause"> Premature menopause</label>
+                <label><input type="radio" name="q33" value="Female sex"> Female sex</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-34">
+            <p>Which one of the following is most recognised as a risk factor for developing osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q34" value="Osteogenesis imperfecta"> Osteogenesis imperfecta</label>
+                <label><input type="radio" name="q34" value="Marfan's syndrome"> Marfan's syndrome</label>
+                <label><input type="radio" name="q34" value="Myotonic dystrophy"> Myotonic dystrophy</label>
+                <label><input type="radio" name="q34" value="Duehenne muscular dystrophy"> Duehenne muscular dystrophy</label>
+                <label><input type="radio" name="q34" value="Ehler-Danlos syndrome"> Ehler-Danlos syndrome</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-35">
+            <p>Which of the following features is a characteristic of Ehlers Danlos syndrome?</p>
+            <div class="options">
+                <label><input type="radio" name="q35" value="thickening of the skin"> thickening of the skin</label>
+                <label><input type="radio" name="q35" value="mental retardation"> mental retardation</label>
+                <label><input type="radio" name="q35" value="an increased incidence of skin carcinoma"> an increased incidence of skin carcinoma</label>
+                <label><input type="radio" name="q35" value="thrombocytopenia"> thrombocytopenia</label>
+                <label><input type="radio" name="q35" value="habitual dislocation of joints"> habitual dislocation of joints</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-36">
+            <p>Which one of the following is least recognised as a risk factor for developing osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q36" value="Cushing's syndrome"> Cushing's syndrome</label>
+                <label><input type="radio" name="q36" value="Turners syndrome"> Turners syndrome</label>
+                <label><input type="radio" name="q36" value="Hyperparathyroidism"> Hyperparathyroidism</label>
+                <label><input type="radio" name="q36" value="Hypothyroidism"> Hypothyroidism</label>
+                <label><input type="radio" name="q36" value="Diabetes mellitus"> Diabetes mellitus</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-37">
+            <p>Which one of the following is least recognised as a risk factor tor developing osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q37" value="Multiple myeloma"> Multiple myeloma</label>
+                <label><input type="radio" name="q37" value="Rheumatoid arthritis"> Rheumatoid arthritis</label>
+                <label><input type="radio" name="q37" value="Long-term phenytoin therapy"> Long-term phenytoin therapy</label>
+                <label><input type="radio" name="q37" value="Chronic renal failure"> Chronic renal failure</label>
+                <label><input type="radio" name="q37" value="Diabetes mellitus"> Diabetes mellitus</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-38">
+            <p>A 50-year-old man with no past medical history is investigated for ongoing back pain. He is found to have a vertebral collapse secondary to osteoporosis. What is the most appropriate test to determine the cause of his osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q38" value="Thyroid function tests"> Thyroid function tests</label>
+                <label><input type="radio" name="q38" value="Prostate specific antigen"> Prostate specific antigen</label>
+                <label><input type="radio" name="q38" value="Oestrogen level"> Oestrogen level</label>
+                <label><input type="radio" name="q38" value="Prolactin level"> Prolactin level</label>
+                <label><input type="radio" name="q38" value="Testosterone level"> Testosterone level</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-39">
+            <p>A 65-year-old female is on long-term prednisolone therapy for polymyalgia rheumatica. What is the most appropriate protection against osteoporosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q39" value="Hormone replacement therapy"> Hormone replacement therapy</label>
+                <label><input type="radio" name="q39" value="Calcitonin"> Calcitonin</label>
+                <label><input type="radio" name="q39" value="Oral bisphosphonate"> Oral bisphosphonate</label>
+                <label><input type="radio" name="q39" value="Calcium and vitamin D"> Calcium and vitamin D</label>
+                <label><input type="radio" name="q39" value="Hip protectors"> Hip protectors</label>
+            </div>
+        </div>
+
+        <div class="question" id="question-40">
+            <p>40-A 57-year-old woman with a history ot polymyalgia rheumatica has been taking prednisolone 10 mg for the past 5 months. A DEXA scan is reported as follows:
+            L2 T-score -1.6 SD
+            Femoral neck T-score -1.7 SD
+            What is the most suitable management?</p>
+            <div class="options">
+                <label><input type="radio" name="q40" value="No treatment"> No treatment</label>
+                <label><input type="radio" name="q40" value="Vitamin D + calcium supplementation + repeat DEXA scan in 6 months"> Vitamin D + calcium supplementation + repeat DEXA scan in 6 months</label>
+                <label><input type="radio" name="q40" value="Vitamin D + calcium supplementation"> Vitamin D + calcium supplementation</label>
+                <label><input type="radio" name="q40" value="Vitamin D + calcium supplementation + hormone replacement therapy"> Vitamin D + calcium supplementation + hormone replacement therapy</label>
+                <label><input type="radio" name="q40" value="Vitamin D + calcium supplementation + oral bisphosphonate"> Vitamin D + calcium supplementation + oral bisphosphonate</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-41">
+            <p>41-A 72-year-old woman is reviewed in the osteoporosis clinic. She had a hip fracture 5 years ago after which she was started on alendronate. This had to be stopped due to persistent musculoskeletal pain. Risedronate also had to be stopped for similar reasons. Strontium ranelate was therefore started but this was stopped following the development of a deep vein thrombosis. Her current T-score is -4.1. It has therefore been decided to start a trial of denosumab. What is the mechanism of action of this drug?</p>
+            <div class="options">
+                <label><input type="radio" name="q41" value="Monoclonal antibody against osteoprotegerin"> Monoclonal antibody against osteoprotegerin</label>
+                <label><input type="radio" name="q41" value="Selective oestrogen receptor modulator"> Selective oestrogen receptor modulator</label>
+                <label><input type="radio" name="q41" value="Inhibits RANK ligand which in turn inhibits the maturation of osteoclasts"> Inhibits RANK ligand which in turn inhibits the maturation of osteoclasts</label>
+                <label><input type="radio" name="q41" value="Promotes differentiation of pre-osteoblasts to osteoblasts + inhibits osteoclasts"> Promotes differentiation of pre-osteoblasts to osteoblasts + inhibits osteoclasts</label>
+                <label><input type="radio" name="q41" value="Pyrophosphate analog which inhibits osteoclast activity"> Pyrophosphate analog which inhibits osteoclast activity</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-42">
+            <p>42- A 50-year-old woman presents with progressive muscle pain and weakness for 3 weeks. The symptoms are localised mainly to the proximal muscle groups, affecting the deltoid and the pelvic muscles. On physical examination, there is tenderness on palpation of affected muscles. Laboratory investigations reveal a serum creatine kinase level of 2000 U/L. Electromyography demonstrates myopathic changes. Which of the following is the most likely diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q42" value="Denervation atrophy"> Denervation atrophy</label>
+                <label><input type="radio" name="q42" value="Dermatomyositis"> Dermatomyositis</label>
+                <label><input type="radio" name="q42" value="Inclusion body myositis"> Inclusion body myositis</label>
+                <label><input type="radio" name="q42" value="Polymyositis"> Polymyositis</label>
+                <label><input type="radio" name="q42" value="Systemic lupus erythematosus"> Systemic lupus erythematosus</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-43">
+            <p>43- A 34-year-old man with AIDS complains of general malaise, low-grade fevers, and diffuse myalgias of 1 month duration. His medications include only Zidovudine and zalcitabine, which he has been taking for 8 months. Physical examination is remarkable for oral thrush, diffuse lymphadenopathy, and generalised muscle tenderness and weakness. The remainder of his examination is normal. Complete blood count reveals a hematocrit of 27%, WBC of 2900/L with 60% neutrophils, 30% lymphocytes, and 10% monocytes. Creatine phosphokinase is 6000 U/L. Which of the following is most likely to yield the diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q43" value="Blood cultures"> Blood cultures</label>
+                <label><input type="radio" name="q43" value="Lymph node biopsy"> Lymph node biopsy</label>
+                <label><input type="radio" name="q43" value="Electromyography"> Electromyography</label>
+                <label><input type="radio" name="q43" value="Discontinuing the zidovudine"> Discontinuing the zidovudine</label>
+                <label><input type="radio" name="q43" value="Muscle biopsy"> Muscle biopsy</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-44">
+            <p>44- A 64-year-old man is having difficulty getting out of a chair. He has lost 15 lb and feels tired all the time. On examination, there is a blue purple rash on his eyelids and knuckles, and muscle strength in his proximal muscles is rated 4 out of 5. His creatinine kinase (CK) level is elevated and he is started on prednisone. Which of the following is the most important in monitoring response to therapy?</p>
+            <div class="options">
+                <label><input type="radio" name="q44" value="testing of muscle strength"> testing of muscle strength</label>
+                <label><input type="radio" name="q44" value="sedimentation rates"> sedimentation rates</label>
+                <label><input type="radio" name="q44" value="urine transaminase enzymes"> urine transaminase enzymes</label>
+                <label><input type="radio" name="q44" value="EMG"> EMG</label>
+                <label><input type="radio" name="q44" value="alkaline phosphatase"> alkaline phosphatase</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-45">
+            <p>45- A 54-year-old male presents with weakness of his upper arms. On examination he is found to have macular rash over his back and the extensor aspects of his upper arms. He is a heavy smoker and his sodium is 121 mmol/l. What is the most likely underlying diagnosis?</p>
+            <div class="options">
+                <label><input type="radio" name="q45" value="Addison's disease"> Addison's disease</label>
+                <label><input type="radio" name="q45" value="Polymyositis"> Polymyositis</label>
+                <label><input type="radio" name="q45" value="Overlap syndrome"> Overlap syndrome</label>
+                <label><input type="radio" name="q45" value="Dermatomyositis"> Dermatomyositis</label>
+                <label><input type="radio" name="q45" value="Hypothyroidism"> Hypothyroidism</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-46">
+            <p>46- A 62-year-old man with lung cancer is suspected of having dermatomyositis. Which one of the following antibodies is most likely to be positive?</p>
+            <div class="options">
+                <label><input type="radio" name="q46" value="Antinuclear antibodies"> Antinuclear antibodies</label>
+                <label><input type="radio" name="q46" value="Anti-centromere bodies"> Anti-centromere bodies</label>
+                <label><input type="radio" name="q46" value="Anti-scl-70 antibodies"> Anti-scl-70 antibodies</label>
+                <label><input type="radio" name="q46" value="Anti-Jo-1 antibodies"> Anti-Jo-1 antibodies</label>
+                <label><input type="radio" name="q46" value="Anti-Mi-2 antibodies"> Anti-Mi-2 antibodies</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-47">
+            <p>47- A 61-year-old man is noted to have thickened patches of skin over his knuckles and extensor surfaces consistent with Gottron's papules. His creatinine kinase levels are also elevated. A diagnosis of dermatomyositis is suspected. Which one of the following types of autoantibody is most specific for this condition?</p>
+            <div class="options">
+                <label><input type="radio" name="q47" value="Anti-scl-70 antibodies"> Anti-scl-70 antibodies</label>
+                <label><input type="radio" name="q47" value="Anti-Jo-1 antibodies"> Anti-Jo-1 antibodies</label>
+                <label><input type="radio" name="q47" value="Antinuclear antibodies"> Antinuclear antibodies</label>
+                <label><input type="radio" name="q47" value="Anti-Mi-2 antibodies"> Anti-Mi-2 antibodies</label>
+                <label><input type="radio" name="q47" value="Anti-centromere bodies"> Anti-centromere bodies</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-48">
+            <p>48- Which one of the following is true regarding the investigation of a patient with dermatomyositis?</p>
+            <div class="options">
+                <label><input type="radio" name="q48" value="Creatine kinase is characteristically normal"> Creatine kinase is characteristically normal</label>
+                <label><input type="radio" name="q48" value="Muscle biopsy is contraindicated"> Muscle biopsy is contraindicated</label>
+                <label><input type="radio" name="q48" value="Anti-Jo-1 antibodies are usually negative"> Anti-Jo-1 antibodies are usually negative</label>
+                <label><input type="radio" name="q48" value="Antinuclear antibodies are always negative"> Antinuclear antibodies are always negative</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-49">
+            <p>49- A 19-year-old college student presents to the emergency department with crampy abdominal pain and watery diarrhoea that has worsened over 3 days. He recently returned from a volunteer tripto Mexico. He has no past medical history and felt well throughout the trip. Stool examination shows small cysts containing four nuclei, and stool antigen immunoassay is positive for Giardia. Which ofthe following is a recommended treatment regimen for this patient?</p>
+            <div class="options">
+                <label><input type="radio" name="q49" value="Albendazole"> Albendazole</label>
+                <label><input type="radio" name="q49" value="Clindamycin"> Clindamycin</label>
+                <label><input type="radio" name="q49" value="Giardiasis is self-limited and requires no antibiotic therapy"> Giardiasis is self-limited and requires no antibiotic therapy</label>
+                <label><input type="radio" name="q49" value="Paromomycin"> Paromomycin</label>
+                <label><input type="radio" name="q49" value="Tinidazole"> Tinidazole</label>
+            </div>
+        </div>
+        
+        <div class="question" id="question-50">
+            <p>50- Which of the following is true of giardia lamblia infection?</p>
+            <div class="options">
+                <label><input type="radio" name="q50" value="Cause steatorrhoea"> Cause steatorrhoea</label>
+                <label><input type="radio" name="q50" value="Diagnosed by stool culture"> Diagnosed by stool culture</label>
+                <label><input type="radio" name="q50" value="Eradicated by mebendazole"> Eradicated by mebendazole</label>
+                <label><input type="radio" name="q50" value="Is often symptomatic"> Is often symptomatic</label>
+            </div>
+        </div>
+
+        <button class="btn" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        <button class="btn" id="submitBtn" onclick="evaluateQuiz()" style="display: none;">Submit Quiz</button>
+
+        <div class="result" id="result">
+            <h2>Results</h2>
+            <div id="score"></div>
+            <div id="answers-summary"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 50;
+        let score = 0;
+        let timerInterval;
+        const answers = {
+            q1: "Ankylosing spondylitis",
+            q2: "Pain at night",
+            q3: "Reduced lateral flexion of the lumbar spine",
+            q4: "Achalasia",
+            q5: "X-ray of the sacro-iliac joints",
+            q6: "90%",
+            q7: "Anterior uveitis",
+            q8: "Aortic regurgitation",
+            q9: "Heart block",
+            q10: "Achilles tendonitis is a recognised association",
+            q11: "Sclerosis",
+            q12: "Naproxen",
+            q13: "Exercise regime + NSAIDs",
+            q14: "Crohn's disease",
+            q15: "Psoriatic arthritis",
+            q16: "10%",
+            q17: "Presence of diarrhoea",
+            q18: "Inflammation at the site of tendinous or ligamentous insertion into bone",
+            q19: "Males and females are equally affected",
+            q20: "Behcet syndrome",
+            q21: "Behcet's syndrome",
+            q22: "Recurrent oral ulceration",
+            q23: "Conjunctivitis",
+            q24: "All of the above are known complications of Behçet’s syndrome",
+            q25: "HLA-B27",
+            q26: "Reactive arthritis secondary to Salmonella spp.",
+            q27: "Reactive arthritis",
+            q28: "Shigella flexneri",
+            q29: "Aseptic meningoencephalitis",
+            q30: "Osteocytes",
+            q31: "Osteoclast function",
+            q32: "Osteopenia in vertebrae, osteoporosis in femoral neck",
+            q33: "Obesity",
+            q34: "Osteogenesis imperfecta",
+            q35: "Habitual dislocation of joints",
+            q36: "Hypothyroidism",
+            q37: "Long-term phenytoin therapy",
+            q38: "Testosterone level",
+            q39: "Oral bisphosphonate",
+            q40: "Vitamin D + calcium supplementation + oral bisphosphonate",
+            q41: "Inhibits RANK ligand which in turn inhibits the maturation of osteoclasts",
+            q42: "Polymyositis",
+            q43: "Muscle biopsy",
+            q44: "Testing of muscle strength",
+            q45: "Dermatomyositis",
+            q46: "Antinuclear antibodies",
+            q47: "Anti-Mi-2 antibodies",
+            q48: "Anti-Jo-1 antibodies are usually negative",
+            q49: "Tinidazole",
+            q50: "Cause steatorrhoea"
+        };
+
+
+        function showQuestion() {
+            document.querySelectorAll('.question').forEach((q, index) => {
+                q .style.display = index + 1 === currentQuestion ? 'block' : 'none';
+            });
+            document.getElementById('nextBtn').style.display = currentQuestion < totalQuestions ? 'block' : 'none';
+            document.getElementById('submitBtn').style.display = currentQuestion === totalQuestions ? 'block' : 'none';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            clearInterval(timerInterval);
+            startTimer();
+            showQuestion();
+        }
+
+        function startTimer() {
+            let timeRemaining = 60;
+            document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('timer').textContent = `Time remaining: ${timeRemaining} seconds`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    if (currentQuestion < totalQuestions) {
+                        nextQuestion();
+                    } else {
+                        evaluateQuiz();
+                    }
+                }
+            }, 1000);
+        }
+
+        function evaluateQuiz() {
+            score = 0;
+            let summary = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const correctAnswer = answers[`q${i}`];
+                const questionElement = document.getElementById(`question-${i}`);
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                let questionSummary = `<p><strong>Question ${i}: </strong>${questionElement.querySelector('p').innerText}</p>`;
+
+                options.forEach(option => {
+                    const optionLabel = option.parentElement;
+                    if (option.value === correctAnswer) {
+                        optionLabel.style.color = 'green';
+                    } else if (selectedOption && selectedOption.value === option.value) {
+                        optionLabel.style.color = 'red';
+                    }
+                });
+
+                questionSummary += `<div>Answer: <strong>${selectedOption ? selectedOption.value : 'None selected'}</strong></div>`;
+                questionSummary += `<div>Correct answer: <strong>${correctAnswer}</strong></div>`;
+
+                if (selectedOption && selectedOption.value === correctAnswer) {
+                    score++;
+                    summary += questionSummary + `<p class="correct">Correct</p>`;
+                } else {
+                    summary += questionSummary + `<p class="incorrect">Incorrect</p>`;
+                }
+            }
+
+            document.getElementById('score').textContent = `Your score: ${score} out of ${totalQuestions}`;
+            document.getElementById('answers-summary').innerHTML = summary;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('timer').style.display = 'none'; 
+            document.querySelectorAll('.question').forEach((q) => q.style.display = 'none');
+
+            clearInterval(timerInterval);
+        }
+
+        window.onload = function() {
+            showQuestion();
+            startTimer();
+        };
+        
+        
+        function nextQuestion() {
+    // Increase the current question counter
+            currentQuestion++;
+
+            // Reset the timer
+            clearInterval(timerInterval); // Stop the current timer
+            startTimer(); // Start the timer from the beginning
+
+            // Show the next question
+            showQuestion();
+        }
+        
+    </script>
+</body>
+</html>
